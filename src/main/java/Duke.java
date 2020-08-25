@@ -7,6 +7,9 @@ public class Duke {
     public static void main(String[] args){
 
         Scanner scan = new Scanner(System.in);
+        String[] item = new String[100];
+        int itemno = 0;
+        int index = 1;
         boolean endconvo = false;
 
         String logo = " ____        _        \n"
@@ -17,7 +20,6 @@ public class Duke {
         System.out.println("\nHello from\n" + logo);
 
         System.out.println(boundary+"\nHello! I'm Duke\n" + "What can I do for you?\n" +boundary);
-        System.out.println("Bye. Hope to see you again soon");
 
 
         while(!endconvo){
@@ -27,11 +29,23 @@ public class Duke {
                 endconvo = true;
             }
 
-            else{
-                endconvo = false;
+            else if(txt.equals("list")){
+                System.out.println(boundary+"\n");
+                for(int i =0; i < itemno; i++){
+                    System.out.println(String.format("%d",index) + ". " +  item[i]);
+                    index++;
+                }
+
+                System.out.println(boundary);
+                index = 1;
             }
 
-            System.out.println(boundary+"\n" + txt + "\n"  +boundary);
+            else {
+                item[itemno] = txt;
+                System.out.println(boundary + "\nadded: " + txt + "\n" + boundary);
+                itemno++;
+            }
+
 
         }
 
