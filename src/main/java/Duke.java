@@ -7,7 +7,7 @@ public class Duke {
     public static void main(String[] args){
 
         Scanner scan = new Scanner(System.in);
-        String[] item = new String[100];
+        Task[] item = new Task[100];
         int itemno = 0;
         int index = 1;
         boolean endconvo = false;
@@ -24,6 +24,7 @@ public class Duke {
 
         while(!endconvo){
             String txt = scan.nextLine();
+            String[] donetxt = txt.split(" ", 3);
 
             if(txt.equals("bye")){
                 endconvo = true;
@@ -31,8 +32,9 @@ public class Duke {
 
             else if(txt.equals("list")){
                 System.out.println(boundary+"\n");
+
                 for(int i =0; i < itemno; i++){
-                    System.out.println(String.format("%d",index) + ". " +  item[i]);
+                    System.out.println(String.format("%d",index) + ".[ " + item[i].getStatusIcon() + "] " + item[i].description);
                     index++;
                 }
 
@@ -40,9 +42,18 @@ public class Duke {
                 index = 1;
             }
 
+            else if(donetxt[0].equals("done")){
+                int taskno = Integer.parseInt(donetxt[1]);
+                item[taskno - 1].markAsDone();
+                System.out.println("Nice! I've marked this task as done: " + "\n");
+                System.out.println("\t[" + item[taskno - 1].getStatusIcon() + "] " + item[taskno - 1 ].description);
+                System.out.println(boundary);
+
+            }
+
             else {
-                item[itemno] = txt;
-                System.out.println(boundary + "\nadded: " + txt + "\n" + boundary);
+                item[itemno] = new Task(txt);
+                System.out.println(boundary + "\nadded: " + item[itemno].description + "\n" + boundary);
                 itemno++;
             }
 
