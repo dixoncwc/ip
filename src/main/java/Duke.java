@@ -41,10 +41,10 @@ public class Duke {
                     System.out.println(boundary);
                     index = 1;
                 } else if (Message[0].equals("done")) {
-                    taskno = Integer.parseInt(Message[1]);
-                    item[taskno - 1].markAsDone();
+                    int donetaskno = Integer.parseInt(Message[1]);
+                    item[donetaskno - 1].markAsDone();
                     System.out.println("Nice! I've marked this task as done: " + "\n");
-                    System.out.println("\t[" + item[taskno - 1].getStatusIcon() + "] " + item[taskno - 1].description);
+                    System.out.println("\t[" + item[donetaskno - 1].getStatusIcon() + "] " + item[donetaskno - 1].description);
                     System.out.println(boundary);
                 } else if (Message[0].equals("todo")) {
                     item[taskno] = new ToDo(Message[1]);
