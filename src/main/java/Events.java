@@ -17,6 +17,14 @@ public class Events extends Task {
 
     @Override
     public String toString() {
-        return "[E]" + super.toString() + "(at:" + MeetingTime + ")";
+        return "[E]" + super.toString() + " (at: " + MeetingTime + ")";
+    }
+
+    @Override
+    public String[] getTaskDetails(){
+        String[] taskTime = new String[1];
+        taskTime[0] = this.getMeetingTime();
+
+        return taskTime;
     }
 }

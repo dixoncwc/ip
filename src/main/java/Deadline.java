@@ -17,6 +17,14 @@ public class Deadline extends Task {
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + "(by: " + by + ")";
+        return "[D]" + super.toString() + " (by: " + by + ")";
+    }
+
+    @Override
+    public String[] getTaskDetails(){
+        String[] taskTime = new String[1];
+        taskTime[0] = this.getBy();
+
+        return taskTime;
     }
 }
