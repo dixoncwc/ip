@@ -178,7 +178,7 @@ public class Duke {
     public static void displayList(){
         System.out.println(boundary);
 
-        for (int i = 0; i < taskNo; i++) {
+        for (int i = 0; i < itemList.size(); i++) {
 
             System.out.println(String.format("%d", index) + "." + itemList.get(i));
             index++;
