@@ -21,31 +21,14 @@ public class Duke {
 
 
     public static void main(String[] args) throws DukeException {
-        //Duke main = new Duke("DukeTaskList.txt");
         dukeStart();
-
-
     }
 
     public static void saveFile() throws IOException{
 
-        File newDirectory = new File("src/main/java/Duke");
-        boolean isNewDirectoryCreated = newDirectory.mkdir();
-        if (isNewDirectoryCreated) {
-            File newFile = new File("src/main/java/Duke/DukeTaskList.txt");
-            try {
-                newFile.createNewFile();
-            } catch (IOException ex) {
-                System.out.println("Failed to create file in new directory");
-            }
-        }
-        else {
-            System.out.println("Failed to create directory");
-        }
-       // throw new FileNotFoundException();
         FileWriter fw = null;
         try{
-            fw = new FileWriter("src/main/java/Duke/DukeTaskList.txt");
+            fw = new FileWriter("Duke/DukeTaskList.txt");
 
         }catch(IOException e){
             //throw new IOException();
@@ -75,12 +58,12 @@ public class Duke {
     }
 
     public static ArrayList<Task> loadFile() throws FileNotFoundException, DukeException{
-        File loadFile = new File("src/main/java/Duke/DukeTaskList.txt");
+        File loadFile = new File("Duke/DukeTaskList.txt");
         if(!loadFile.exists()){
-            File newFilePath = new File("src/main/java/Duke");
+            File newFilePath = new File("Duke");
             boolean isNewDirectoryCreated = newFilePath.mkdir();
             if (isNewDirectoryCreated) {
-                File newFile = new File("src/main/java/Duke/DukeTaskList.txt");
+                File newFile = new File("Duke/DukeTaskList.txt");
                 try {
                     newFile.createNewFile();
                 } catch (IOException ex) {
@@ -124,6 +107,7 @@ public class Duke {
         try {
             itemList = loadFile();
         }catch(FileNotFoundException | DukeException e){
+
             itemList = new ArrayList<>();
         }
         Scanner scan = new Scanner(System.in);
