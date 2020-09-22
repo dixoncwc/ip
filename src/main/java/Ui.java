@@ -14,7 +14,7 @@ public class Ui {
     public Task task;
     public int index = 1;
     public int searchIndex = 1;
-    public boolean endConvo = false;
+    public static boolean endConvo = false;
     public Parser parser;
     public TaskList taskList;
     public Storage storage;
@@ -206,7 +206,8 @@ public class Ui {
         System.out.println("Format for ToDo: todo <task>");
         System.out.println("Format for Deadline: deadline <task> + /by <date>");
         System.out.println("Format for Event: event <task> + /at <datetime>");
-        System.out.println("Format for Delete: delete <taskno>" + "\n" + boundary);
+        System.out.println("Format for Delete: delete <taskno>");
+        System.out.println("Format for Search: find <keyword>"  + "\n" + boundary);
     }
 
 }
