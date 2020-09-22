@@ -1,5 +1,7 @@
 public class Events extends Task {
-
+    /**
+     * This class handles all the event details and meetingTime
+     */
     protected String MeetingTime;
 
     public Events(String description, String MeetingTime) {

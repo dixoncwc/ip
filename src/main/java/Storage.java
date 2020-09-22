@@ -13,6 +13,11 @@ public class Storage {
         this.filePath = filePath;
     }
 
+    /**
+     * This method will save the tasklist to a text file stored inside a directory when the user exit the program
+     * @param taskList
+     * @throws IOException
+     */
     public void saveFile(TaskList taskList) throws IOException {
         this.ui = new Ui();
         FileWriter fw = null;
@@ -46,6 +51,12 @@ public class Storage {
         ui.endConvo = true;
     }
 
+    /**
+     * When the user runs the program, it will check for existing file and load all task into the array
+     * @return
+     * @throws FileNotFoundException
+     * @throws DukeException
+     */
     public ArrayList<Task> loadFile() throws FileNotFoundException, DukeException{
         File loadFile = new File(this.filePath);
         if(!loadFile.exists()){

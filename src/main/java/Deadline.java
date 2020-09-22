@@ -1,5 +1,7 @@
 public class Deadline extends Task {
-
+    /**
+     * This class handles all the deadline details and deadlineDate
+     */
     protected String by;
 
     public Deadline(String description, String by) {

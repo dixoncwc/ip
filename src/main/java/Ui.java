@@ -73,6 +73,10 @@ public class Ui {
         System.out.println(boundary+ "\nBye. Hope to see you again soon\n" +boundary);
     }
 
+    /**
+     * This method is use to display the whole list of task stored inside the ArrayList when the user
+     * input command "list"
+     */
     public void displayList(){
         System.out.println(boundary);
 
@@ -84,6 +88,10 @@ public class Ui {
         System.out.println(boundary);
         index = 1;
     }
+
+    /**
+     * This method is use to mark a task as done according to the index user has input
+     */
     public void done(){
         int doneTaskNo = Integer.parseInt(Message[1]);
         task = taskList.getFullTask(doneTaskNo - 1);
@@ -92,6 +100,10 @@ public class Ui {
         System.out.println("\t[" + task);
         System.out.println(boundary);
     }
+
+    /**
+     * This method is use to delete a task according to the index user has input
+     */
     public void deleteTask() {
         int deleteTaskNo = (Integer.parseInt(Message[1])) - 1;
         task = taskList.getFullTask(deleteTaskNo);
@@ -101,6 +113,11 @@ public class Ui {
         System.out.println("Now you have " + taskList.getTaskSize() + " task in the list\n" + boundary);
         taskNo--;
     }
+
+    /**
+     * This method is use to add a To-Do into the arraylist
+     * User have to enter command todo with the task details
+     */
     public void addTodo(){
         try {
             newTask = new ToDo(Message[1]);
@@ -113,6 +130,11 @@ public class Ui {
             System.out.println("Oops!!! The description of todo cannot be empty");
         }
     }
+
+    /**
+     * This method is use to enter a task that has a deadline.
+     * User will have to input command deadline + details and datetime by using /by
+     */
     public void addDeadline(){
         try {
             newMessage = Message[1];
@@ -128,6 +150,10 @@ public class Ui {
         }
     }
 
+    /**
+     * This method is use to enter an event that is happening some other days.
+     * User will have to input command event + details and datetime by using /at
+     */
     public void addEvent(){
         try {
             newMessage = Message[1];
@@ -142,6 +168,10 @@ public class Ui {
             System.out.println("Oops!!! Please enter a description and event date");
         }
     }
+
+    /**
+     * User can input command help to display a help list that shows the individual command and usage
+     */
     public static void showHelp(){
         System.out.println("Format for Done: done <taskno>");
         System.out.println("Format for List of task: list");
