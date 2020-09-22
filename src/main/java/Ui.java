@@ -7,16 +7,17 @@ public class Ui {
     private static final String boundary = "____________________________________________________________";
     public String commandTxt;
     public String[] Message;
-    public static String newMessage;
-    public static Task newTask;
+    public String searchKeyword;
+    public String newMessage;
+    public Task newTask;
     public int taskNo = 0;
-    public static ArrayList<Task> itemList = new ArrayList<>();
-    public static Task task;
-    public static int index = 1;
-    public static boolean endConvo = false;
-    public static Parser parser;
-    public static TaskList taskList;
-    public static Storage storage;
+    public Task task;
+    public int index = 1;
+    public int searchIndex = 1;
+    public boolean endConvo = false;
+    public Parser parser;
+    public TaskList taskList;
+    public Storage storage;
 
     public void showIntro() throws FileNotFoundException, DukeException {
         Scanner scan = new Scanner(System.in);
@@ -61,7 +62,9 @@ public class Ui {
                         showHelp();
                     } else if(Message[0].equals("delete")){
                         deleteTask();
-                    } else {
+                    } else if(Message[0].equals("find")){
+                        findTask();
+                    }else {
                         throw new DukeException();
                     }
                 }catch(DukeException | IOException e){
@@ -73,10 +76,30 @@ public class Ui {
         System.out.println(boundary+ "\nBye. Hope to see you again soon\n" +boundary);
     }
 
+
     /**
      * This method is use to display the whole list of task stored inside the ArrayList when the user
      * input command "list"
      */
+
+    public void findTask(){
+        searchKeyword = Message[1];
+        ArrayList<Task> keywordTask = new ArrayList<>();
+        for(int i=0; i < taskList.getTaskSize(); i++){
+            if(taskList.getTask().get(i).description.contains(searchKeyword)){
+                task = taskList.getFullTask(i);
+                keywordTask.add(task);
+            }
+        }
+        System.out.println(boundary + "\nHere are the matching tasks in your list: ");
+        for(int i=0; i < keywordTask.size(); i++){
+            System.out.println(String.format("%d", searchIndex) + "." + keywordTask.get(i));
+            searchIndex++;
+        }
+        System.out.println(boundary);
+        searchIndex = 1;
+    }
+
     public void displayList(){
         System.out.println(boundary);
 

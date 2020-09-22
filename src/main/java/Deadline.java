@@ -1,12 +1,22 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 public class Deadline extends Task {
     /**
      * This class handles all the deadline details and deadlineDate
      */
     protected String by;
+    public LocalDate deadlineDate;
 
     public Deadline(String description, String by) {
         super(description);
-        this.by = by;
+        try {
+            deadlineDate = LocalDate.parse(by.trim());
+            this.by = deadlineDate.format(DateTimeFormatter.ofPattern("MMM d yyyy"));
+        }catch(DateTimeParseException e){
+            this.by = by;
+        }
     }
 
     public void setBy(String by){
@@ -19,7 +29,7 @@ public class Deadline extends Task {
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by:" + by + ")";
+        return "[D]" + super.toString() + " (by: " + by + ")";
     }
 
     @Override
