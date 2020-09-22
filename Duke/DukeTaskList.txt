@@ -1,2 +1,0 @@
-T | ✓ | read book
-E | ✘ | party  | Sep 25 2020

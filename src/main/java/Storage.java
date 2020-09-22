@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Storage {
     private final String filePath;
+    private static boolean existLoadedFile = true;
+    private static int loadIndex = 0;
     public Ui ui;
 
     public Storage(String filePath) {
@@ -60,6 +62,7 @@ public class Storage {
     public ArrayList<Task> loadFile() throws FileNotFoundException, DukeException{
         File loadFile = new File(this.filePath);
         if(!loadFile.exists()){
+            existLoadedFile = false;
             File newFilePath = new File("Duke");
             boolean isNewDirectoryCreated = newFilePath.mkdir();
             if (isNewDirectoryCreated) {
@@ -100,7 +103,13 @@ public class Storage {
             }
             loadTaskList.add(loadTask);
         }
-        System.out.println("File Loaded Successfully");
+        if(existLoadedFile == true && loadIndex == 0) {
+            System.out.println("File Successfully Loaded");
+            loadIndex++;
+        }else if(existLoadedFile == false && loadIndex == 0){
+            System.out.println("Created directory");
+        }
+
         return loadTaskList;
     }
 }
