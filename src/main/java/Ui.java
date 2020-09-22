@@ -124,7 +124,7 @@ public class Ui {
         task = taskList.getFullTask(doneTaskNo - 1);
         task.markAsDone();
         System.out.println("Nice! I've marked this task as done: ");
-        System.out.println("\t[" + task);
+        System.out.println("  " + task);
         System.out.println(boundary);
     }
 
