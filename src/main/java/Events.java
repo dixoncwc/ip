@@ -1,33 +1,23 @@
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-
 public class Events extends Task {
 
-    protected String meetingTime;
-    public LocalDate meetingDate;
+    protected String MeetingTime;
 
-    public Events(String description, String meetingTime) {
+    public Events(String description, String MeetingTime) {
         super(description);
-        try {
-            meetingDate = LocalDate.parse(meetingTime.trim());
-            this.meetingTime = meetingDate.format(DateTimeFormatter.ofPattern("MMM d yyyy"));
-        }catch(DateTimeParseException e){
-            this.meetingTime = meetingTime;
-        }
+        this.MeetingTime = MeetingTime;
     }
 
-    public void setMeetingTime(String meetingTime) {
-        this.meetingTime = meetingTime;
+    public void setMeetingTime(String MeetingTime) {
+        this.MeetingTime = MeetingTime;
     }
 
     public String getMeetingTime() {
-        return meetingTime;
+        return MeetingTime;
     }
 
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (at: " + meetingTime + ")";
+        return "[E]" + super.toString() + " (at:" + MeetingTime + ")";
     }
 
     @Override
