@@ -3,7 +3,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 public class Deadline extends Task {
-
+    /**
+     * This class handles all the deadline details and deadlineDate
+     */
     protected String by;
     public LocalDate deadlineDate;
 

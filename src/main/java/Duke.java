@@ -1,7 +1,9 @@
 import java.io.IOException;
 import java.io.FileNotFoundException;
 
-
+/**
+ * This is the main class that runs the Duke program
+ */
 public class Duke {
     private Ui ui;
     private Storage storage;
@@ -22,6 +24,11 @@ public class Duke {
         }
     }
 
+    /**
+     * This method will call the UI class and starts the intro of the program
+     * @throws FileNotFoundException
+     * @throws DukeException
+     */
     public void dukeStart() throws FileNotFoundException, DukeException {
         ui.showIntro();
     }
