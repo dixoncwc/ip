@@ -13,7 +13,7 @@
 ## 1. Introduction
 Duke program is a CLi-based program that allows user to manage their task list.
 
-## 2. Startsing the Program
+## 2. Starting the Program
 Before starting the program, ensure that Java 11 is install in your computer.
 
 1. Download the jar file from [here](https://github.com/dixoncwc/ip/releases/tag/A-Jar).
