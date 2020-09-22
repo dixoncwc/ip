@@ -78,8 +78,7 @@ public class Ui {
 
 
     /**
-     * This method is use to display the whole list of task stored inside the ArrayList when the user
-     * input command "list"
+     * This method is use to search for task based on a keyword given by the user
      */
 
     public void findTask(){
@@ -99,6 +98,11 @@ public class Ui {
         System.out.println(boundary);
         searchIndex = 1;
     }
+
+    /**
+     * This method is use to display the whole list of task stored inside the ArrayList when the user
+     * input command "list"
+     */
 
     public void displayList(){
         System.out.println(boundary);
