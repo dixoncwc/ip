@@ -1,7 +1,7 @@
 # Duke Program User Guide
-* 1.Introduction
-* 2.Starting the Program
-* 3.Features
+* 1.[Introduction](https://github.com/dixoncwc/ip/tree/master/docs#1-introduction)
+* 2.[Starting the Program](https://github.com/dixoncwc/ip/tree/master/docs#2-staring-the-program)
+* 3.[Features](https://github.com/dixoncwc/ip/tree/master/docs#3-features)
     * 3.1 Add Task
     * 3.2 Display Task
     * 3.3 Mark Task as Done
@@ -23,13 +23,13 @@ Before starting the program, ensure that Java 11 is install in your computer.
 5. Change the font type to nSimSun
 6. Run this command java -Dfile.encoding=UTF-8 -jar iP.jar
 7. Command prompt should display this Duke Intro Interface 
-![](Duke%20start%20up.png)
+![](photo/Duke%20start%20up.png)
 
 ## 3. Features
-###3.1 Add task
+### 3.1 Add task
 Duke program allows you to do 3 different categories of task: ToDo, Deadline & Event.
 
-#####3.1.1 Add a ToDo Task
+##### 3.1.1 Add a ToDo Task
 This feature will allow user to add a ToDo type of task to the list.
 
 Format: `todo <details>`
@@ -37,9 +37,9 @@ Format: `todo <details>`
 Example: `todo read book`
 
 Output:
-![](todo.png) 
+![](photo/todo.png) 
 
-#####3.1.2 Add a Deadline task
+##### 3.1.2 Add a Deadline task
 This feature will allow user to add a Deadline type of task to the list
 
 Format: `deadline <details> /by <Date in the format of YYYY-MM-DD`
@@ -47,9 +47,9 @@ Format: `deadline <details> /by <Date in the format of YYYY-MM-DD`
 Example: `deadline return book /by 2020-09-22`
 
 Output:
-![](deadline.png)
+![](photo/deadline.png)
 
-#####3.1.3 Add a Event task
+##### 3.1.3 Add a Event task
 This feature will allow user to add a Event type of task to the list
 
 Format: `event <details> /at <Date in the format of YYYY-MM-DD`
@@ -57,9 +57,9 @@ Format: `event <details> /at <Date in the format of YYYY-MM-DD`
 Example: `event party /at 2020-09-25`
 
 Output:
-![](event.png)
+![](photo/event.png)
 
-###3.2 Display Task
+### 3.2 Display Task
 This feature will display the full list of task with the command `list`
 
 Format: `list`
@@ -67,9 +67,9 @@ Format: `list`
 Example: `list`
 
 Output:
-![](list.png)
+![](photo/list.png)
 
-###3.3 Mark Task as Done
+### 3.3 Mark Task as Done
 This feature will allow user to mark their task as done
 
 Format: `done <ArrayIndex>`
@@ -77,9 +77,9 @@ Format: `done <ArrayIndex>`
 Example: `done 1`
 
 Output: 
-![](done.png)
+![](photo/done.png)
 
-###3.4 Delete Task
+### 3.4 Delete Task
 This feature will allow user to delete redundant task
 
 Format: `delete <ArrayIndex>`
@@ -87,9 +87,9 @@ Format: `delete <ArrayIndex>`
 Example: `delete 2`
 
 Output: 
-![](delete.png)
+![](photo/delete.png)
 
-###3.5 Search Task
+### 3.5 Search Task
 This feature will allow user to search a task based on a keyword
 
 Format: `find <keyword>`
@@ -97,9 +97,9 @@ Format: `find <keyword>`
 Example: `find book`
 
 Output:
-![](search.png)
+![](photo/search.png)
 
-###3.6 Show Help
+### 3.6 Show Help
 This feature will display a help list for user to know the usage and command
 
 Format: `help`
@@ -107,9 +107,9 @@ Format: `help`
 Example: `help`
 
 Output:
-![](help.png)
+![](photo/help.png)
 
-##4. Exiting the Program
+## 4. Exiting the Program
 In order to exit the program and save the task list use command `bye`
 
 Format: `bye`
@@ -117,5 +117,5 @@ Format: `bye`
 Example: `bye`
 
 Output:
-![](bye.png)
+![](photo/bye.png)
 
