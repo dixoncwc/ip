@@ -4,8 +4,13 @@ import java.time.format.DateTimeParseException;
 
 public class Events extends Task {
 
+    /**
+     * This class handles all the event details and meetingTime
+     */
+
     protected String meetingTime;
     public LocalDate meetingDate;
+
 
     public Events(String description, String meetingTime) {
         super(description);

@@ -16,11 +16,16 @@ public abstract class Task {
         this.isDone = true;
     }
 
+
     @Override
     public String toString() {
         return "[" + (isDone ? "\u2713" : "\u2718") + "] " + description;
     }
 
+    /**
+     * This abstract method is use in event and deadline to get individual task details such as time and description
+     * @return
+     */
     public abstract String[] getTaskDetails();
 
 }
