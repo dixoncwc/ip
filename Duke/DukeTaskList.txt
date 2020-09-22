@@ -1,2 +1,3 @@
 T | ✘ | return book
-D | ✘ | study  |  mon
+D | ✘ | study  | Oct 15 2019
+E | ✘ | party  | Oct 16 2019
